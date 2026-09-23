@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* @import url("./../public/css/fonts");
+
+@theme {
+  --font-IRANSansX: "IRANSansX";
+
+  --breakpoint-*:initial;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+}
+
+body {
+  @apply font-IRANSansX! min-h-dvh overflow-x-hidden;
+} */
