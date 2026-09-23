@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* @import url("./../public/css/fonts");
+@import url("./../public/css/fonts");
 
 @theme {
   --font-IRANSansX: "IRANSansX";
@@ -14,4 +14,4 @@
 
 body {
   @apply font-IRANSansX! min-h-dvh overflow-x-hidden;
-} */
+}

@@ -1,14 +1,9 @@
-// import { redirect } from "react-router";
+// src/App.jsx
+import { RouterProvider } from "react-router";
+import router from "./lib/routes";
 
-// const App = () => {
-//   return redirect("/");
-// };
+const App = () => {
+  return <RouterProvider router={router} />;
+};
 
-// export default App;
-
-
-export const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+export default App;
