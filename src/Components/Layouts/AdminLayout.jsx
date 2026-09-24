@@ -6,7 +6,7 @@ const AdminLayout = () => {
   return (
     <main>
       <Sidebar />
-      <section className="container mx-auto py-4" id="content">
+      <section className="container mx-auto py-4">
         <Outlet />
       </section>
     </main>

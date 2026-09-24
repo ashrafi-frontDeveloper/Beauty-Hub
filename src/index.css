@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@import url("./front.css");
+
+@font-face {
+  font-family: "IRANSansX";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/fonts/IRANSansX-Thin.woff") format("woff");
+}
+@font-face {
+  font-family: "IRANSansX";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/fonts/IRANSansX-UltraLight.woff") format("woff");
+}
+@font-face {
+  font-family: "IRANSansX";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/IRANSansX-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "IRANSansX";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/IRANSansX-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "IRANSansX";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/IRANSansX-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "IRANSansX";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/IRANSansX-DemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "IRANSansX";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/IRANSansX-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "IRANSansX";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/fonts/IRANSansX-ExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: "IRANSansX";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/fonts/IRANSansX-Black.woff") format("woff");
+}
+
+@theme {
+  /* ---- Typography ---- */
+  --font-IRANSansX: "IRANSansX", Tahoma, system-ui, sans-serif;
+
+  /* ---- Breakpoints (فعلاً همون Bootstrap-style قبلی؛ پایین توضیح دادم) ---- */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* ---- Brand / Primary ---- */
+  --color-primary: #ec4266;
+  --color-primary-dark: #d6335a;
+  --color-primary-light: #fde8ed;
+
+  /* ---- Neutral surfaces ---- */
+  --color-bg: #eae9e9;
+  --color-surface: #f6f6f6;
+
+  /* ---- Admin (سایدبار تیره) ---- */
+  --color-admin-bg: #1e2733;
+
+  /* ---- Appointment Status ---- */
+  --color-status-pending: #f59e0b;
+  --color-status-pending-bg: #fef3c7;
+  --color-status-confirmed: #22c55e;
+  --color-status-confirmed-bg: #dcfce7;
+  --color-status-completed: #3b82f6;
+  --color-status-completed-bg: #dbeafe;
+  --color-status-cancelled: #ef4444;
+  --color-status-cancelled-bg: #fee2e2;
+}
+
+body {
+  @apply font-sans min-h-dvh overflow-x-hidden bg-bg text-neutral-900;
+}
