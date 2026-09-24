@@ -9,7 +9,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <CustomerLayout />,
     children: [
-      { index: true, element: <div>داشبورد مشتری</div> },
+      { index: true, element: <div className="font-IRANSansX">داشبورد مشتری</div> },
       { path: "services", element: <div>خدمات</div> },
       { path: "book-appointment", element: <div>رزرو نوبت</div> },
       { path: "appointments", element: <div>نوبت‌های من</div> },
