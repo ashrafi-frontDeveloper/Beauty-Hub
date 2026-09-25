@@ -13,10 +13,7 @@ const router = createBrowserRouter([
       { path: "services", element: <div>خدمات</div> },
       { path: "book-appointment", element: <div>رزرو نوبت</div> },
       { path: "appointments", element: <div>نوبت‌های من</div> },
-      { path: "favorites", element: <div>علاقه‌مندی‌ها</div> },
-      { path: "notifications", element: <div>اعلان‌ها</div> },
       { path: "profile", element: <div>پروفایل</div> },
-      { path: "settings", element: <div>تنظیمات</div> },
     ],
   },
   {

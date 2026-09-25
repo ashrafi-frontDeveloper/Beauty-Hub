@@ -1,11 +1,11 @@
 // src/Components/Layouts/AdminLayout.jsx
 import { Outlet } from "react-router";
-import Sidebar from "../common/Sidebar/Sidebar";
+import AdminSidebar from "../common/AdminSidebar/AdminSidebar";
 
 const AdminLayout = () => {
   return (
     <main>
-      <Sidebar />
+      <AdminSidebar />
       <section className="container mx-auto py-4">
         <Outlet />
       </section>
