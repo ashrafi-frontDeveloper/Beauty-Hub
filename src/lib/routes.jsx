@@ -4,12 +4,14 @@ import AuthLayout from "../Components/Layouts/AuthLayout";
 import CustomerLayout from "../Components/Layouts/CustomerLayout";
 import AdminLayout from "../Components/Layouts/AdminLayout";
 
+import CustomerDashboardPage from "../features/customer/dashboard/CustomerDashboardPage"
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <CustomerLayout />,
     children: [
-      { index: true, element: <div className="font-IRANSansX">داشبورد مشتری</div> },
+      { index: true, element: <CustomerDashboardPage /> },
       { path: "services", element: <div>خدمات</div> },
       { path: "book-appointment", element: <div>رزرو نوبت</div> },
       { path: "appointments", element: <div>نوبت‌های من</div> },
