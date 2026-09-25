@@ -4,11 +4,12 @@ import CustomerBottomNav from "../common/CustomerBottomNav/CustomerBottomNav";
 
 const CustomerLayout = () => {
   return (
-    <main className="font-IRANSansX">
-      <CustomerBottomNav />
-      <section className="container mx-auto py-4">
+    <main className="min-h-dvh bg-bg font-IRANSansX">
+      <section className="px-4 pt-4 pb-24" id="content">
         <Outlet />
       </section>
+
+      <CustomerBottomNav />
     </main>
   );
 };
