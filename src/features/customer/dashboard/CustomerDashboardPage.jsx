@@ -7,7 +7,6 @@ import DashboardGreeting from "./components/DashboardGreeting";
 import NextAppointmentCard from "./components/NextAppointmentCard";
 import QuickActions from "./components/QuickActions";
 import PopularServices from "./components/PopularServices";
-
 const CustomerDashboardPage = () => {
   const [appointment, setAppointment] = useState(null);
   const [isAppointmentLoading, setIsAppointmentLoading] = useState(true);
