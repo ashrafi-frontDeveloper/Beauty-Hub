@@ -10,3 +10,11 @@ export function getPopularServices(limit = 4) {
     }, FAKE_DELAY);
   });
 }
+
+export function getAllServices() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(services.filter((s) => s.status === "active"));
+    }, FAKE_DELAY);
+  });
+}
