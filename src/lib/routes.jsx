@@ -6,6 +6,7 @@ import AdminLayout from "../Components/Layouts/AdminLayout";
 
 import ServicesPage from "../features/customer/services/ServicesPage";
 import CustomerDashboardPage from "../features/customer/dashboard/CustomerDashboardPage"
+import BookingPage from "../features/customer/booking/BookingPage";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <CustomerDashboardPage /> },
       { path: "services", element: <ServicesPage /> },
-      { path: "book-appointment", element: <div>رزرو نوبت</div> },
+      { path: "book-appointment", element: <BookingPage /> },
       { path: "appointments", element: <div>نوبت‌های من</div> },
       { path: "profile", element: <div>پروفایل</div> },
     ],

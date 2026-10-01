@@ -1,10 +1,19 @@
 // src/Components/common/ServiceCard/ServiceCard.jsx
+import { useNavigate } from "react-router";
 import { Sparkles } from "lucide-react";
 import { formatToman } from "@/utils/formatCurrency";
 
 const ServiceCard = ({ service }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex flex-col gap-2 rounded-2xl bg-surface p-3">
+    <button
+      type="button"
+      onClick={() =>
+        navigate("/book-appointment", { state: { preselectedServiceId: service.id } })
+      }
+      className="flex flex-col gap-2 rounded-2xl bg-surface p-3 text-start"
+    >
       <div className="aspect-square overflow-hidden rounded-xl bg-primary-light">
         {service.image ? (
           <img
@@ -22,7 +31,7 @@ const ServiceCard = ({ service }) => {
       </div>
       <p className="text-sm font-medium text-neutral-800">{service.name}</p>
       <p className="text-xs text-neutral-500">از {formatToman(service.price)}</p>
-    </div>
+    </button>
   );
 };
 
