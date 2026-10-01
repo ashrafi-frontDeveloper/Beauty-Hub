@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { getAllServices } from "@/services/servicesService";
 import { createAppointment } from "@/services/appointmentsService";
-import { currentUser } from "@/data/mock/user";
+import { currentUser } from "@/data/mock/users";
 import BookingStepper from "./components/BookingStepper";
 import SelectServiceStep from "./components/steps/SelectServiceStep";
 import SelectDateStep from "./components/steps/SelectDateStep";
