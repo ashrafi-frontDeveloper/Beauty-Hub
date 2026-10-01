@@ -12,8 +12,32 @@ export function getNextAppointment(customerId) {
             a.customerId === customerId &&
             (a.status === "pending" || a.status === "confirmed")
         ) ?? null;
-
       resolve(upcoming);
     }, FAKE_DELAY);
+  });
+}
+
+// برای محاسبه‌ی Time Slotهای یک روز خاص — dateIso باید فرمت "YYYY-MM-DD" میلادی باشه
+export function getAppointmentsByDate(dateIso) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        appointments.filter((a) => a.date === dateIso && a.status !== "cancelled")
+      );
+    }, 300);
+  });
+}
+
+export function createAppointment(payload) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const newAppointment = {
+        id: `a${appointments.length + 1}`,
+        status: "pending",
+        ...payload,
+      };
+      appointments.push(newAppointment);
+      resolve(newAppointment);
+    }, 500);
   });
 }

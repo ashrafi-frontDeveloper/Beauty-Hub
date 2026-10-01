@@ -9,7 +9,7 @@ export const services = [
     category: "hair",
     status: "active",
     popular: true,
-    image: "assets/image/haircut2.jpg",
+    image: "/assets/image/haircut2.jpg",
   },
   {
     id: "s2",
@@ -20,7 +20,7 @@ export const services = [
     category: "hair",
     status: "active",
     popular: true,
-    image: "assets/image/hair_color.jpg",
+    image: "/assets/image/hair_color.jpg",
   },
   {
     id: "s3",
@@ -31,7 +31,7 @@ export const services = [
     category: "hair",
     status: "active",
     popular: true,
-    image: "assets/image/cratine.jpg",
+    image: "/assets/image/cratine.jpg",
   },
   {
     id: "s4",
@@ -42,7 +42,7 @@ export const services = [
     category: "skin",
     status: "active",
     popular: true,
-    image: "assets/image/ficail.jpg",
+    image: "/assets/image/ficail.jpg",
   },
   {
     id: "s5",
@@ -53,7 +53,7 @@ export const services = [
     category: "nails",
     status: "active",
     popular: false,
-    image: "assets/image/manicure.jpg",
+    image: "/assets/image/manicure.jpg",
   },
   {
     id: "s6",
@@ -64,7 +64,7 @@ export const services = [
     category: "nails",
     status: "active",
     popular: false,
-    image: "assets/image/pedicure.jpg",
+    image: "/assets/image/pedicure.jpg",
   },
   {
     id: "s7",
@@ -75,6 +75,6 @@ export const services = [
     category: "makeup",
     status: "active",
     popular: false,
-    image: "assets/image/Arosi.jpg",
+    image: "/assets/image/Arosi.jpg",
   },
 ];
