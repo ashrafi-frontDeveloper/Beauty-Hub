@@ -53,7 +53,7 @@ const SelectDateStep = ({ selectedDate, onSelect, onNext, onBack }) => {
         <button
           type="button"
           onClick={onBack}
-          className="flex-1 rounded-xl border border-neutral-200 py-3 text-sm text-neutral-600"
+          className="flex-1 rounded-xl border border-neutral-200 py-3 text-sm text-neutral-600 cursor-pointer"
         >
           مرحله قبل
         </button>
@@ -61,7 +61,7 @@ const SelectDateStep = ({ selectedDate, onSelect, onNext, onBack }) => {
           type="button"
           disabled={!selectedDate}
           onClick={onNext}
-          className="flex-1 rounded-xl bg-primary py-3 text-sm font-medium text-white disabled:opacity-40"
+          className="flex-1 rounded-xl bg-primary py-3 text-sm font-medium text-white disabled:opacity-40 cursor-pointer"
         >
           مرحله بعد
         </button>

@@ -41,3 +41,29 @@ export function createAppointment(payload) {
     }, 500);
   });
 }
+
+export function getAppointmentsByCustomer(customerId) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(appointments.filter((a) => a.customerId === customerId));
+    }, 400);
+  });
+}
+
+export function getAppointmentById(id) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(appointments.find((a) => a.id === id) ?? null);
+    }, 300);
+  });
+}
+
+export function cancelAppointment(id) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const appointment = appointments.find((a) => a.id === id);
+      if (appointment) appointment.status = "cancelled";
+      resolve(appointment ?? null);
+    }, 400);
+  });
+}

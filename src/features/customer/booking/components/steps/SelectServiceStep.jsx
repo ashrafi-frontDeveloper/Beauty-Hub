@@ -22,7 +22,7 @@ const SelectServiceStep = ({ services, isLoading, selectedServiceId, onSelect, o
               key={service.id}
               type="button"
               onClick={() => onSelect(service.id)}
-              className={`flex items-center justify-between rounded-xl border p-3 text-start transition-colors ${
+              className={`flex items-center justify-between rounded-xl cursor-pointer border p-3 text-start transition-colors ${
                 isSelected ? "border-primary bg-primary-light" : "border-neutral-200 bg-surface"
               }`}
             >
@@ -48,7 +48,7 @@ const SelectServiceStep = ({ services, isLoading, selectedServiceId, onSelect, o
         type="button"
         disabled={!selectedServiceId}
         onClick={onNext}
-        className="rounded-xl bg-primary py-3 text-sm font-medium text-white disabled:opacity-40"
+        className="rounded-xl bg-primary py-3 text-sm font-medium text-white disabled:opacity-40 cursor-pointer"
       >
         مرحله بعد
       </button>

@@ -1,6 +1,4 @@
 // src/data/mock/appointments.js
-// توجه: "date" حالا همیشه ISO میلادی ذخیره می‌شه (نه متن شمسی آماده).
-// فرمت نمایشی رو هر Component با toPersianDate می‌سازه.
 export const appointments = [
   {
     id: "a1",
@@ -11,6 +9,28 @@ export const appointments = [
     time: "10:30",
     duration: 120,
     price: 500000,
-    status: "confirmed", // pending | confirmed | completed | cancelled
+    status: "confirmed",
+  },
+  {
+    id: "a2",
+    customerId: "u1",
+    serviceId: "s1",
+    serviceName: "کوتاهی مو",
+    date: "2026-09-20",
+    time: "12:00",
+    duration: 45,
+    price: 550000,
+    status: "completed",
+  },
+  {
+    id: "a3",
+    customerId: "u1",
+    serviceId: "s4",
+    serviceName: "مراقبت پوست",
+    date: "2026-09-10",
+    time: "16:00",
+    duration: 60,
+    price: 400000,
+    status: "cancelled",
   },
 ];

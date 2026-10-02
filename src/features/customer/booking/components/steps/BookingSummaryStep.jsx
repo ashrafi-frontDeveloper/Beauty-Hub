@@ -33,7 +33,7 @@ const BookingSummaryStep = ({ service, date, time, onConfirm, onBack, isSubmitti
           type="button"
           onClick={onBack}
           disabled={isSubmitting}
-          className="flex-1 rounded-xl border border-neutral-200 py-3 text-sm text-neutral-600 disabled:opacity-40"
+          className="flex-1 rounded-xl border border-neutral-200 py-3 text-sm cursor-pointer text-neutral-600 disabled:opacity-40"
         >
           مرحله قبل
         </button>
@@ -41,7 +41,7 @@ const BookingSummaryStep = ({ service, date, time, onConfirm, onBack, isSubmitti
           type="button"
           onClick={onConfirm}
           disabled={isSubmitting}
-          className="flex-1 rounded-xl bg-primary py-3 text-sm font-medium text-white disabled:opacity-60"
+          className="flex-1 rounded-xl bg-primary py-3 text-sm font-medium cursor-pointer text-white disabled:opacity-60"
         >
           {isSubmitting ? "در حال ثبت..." : "ثبت نهایی نوبت"}
         </button>

@@ -7,6 +7,9 @@ import AdminLayout from "../Components/Layouts/AdminLayout";
 import ServicesPage from "../features/customer/services/ServicesPage";
 import CustomerDashboardPage from "../features/customer/dashboard/CustomerDashboardPage"
 import BookingPage from "../features/customer/booking/BookingPage";
+import AppointmentsPage from "../features/customer/appointments/AppointmentsPage";
+import AppointmentDetailPage from "../features/customer/appointments/AppointmentDetailPage";
+
 
 const router = createBrowserRouter([
   {
@@ -16,7 +19,16 @@ const router = createBrowserRouter([
       { index: true, element: <CustomerDashboardPage /> },
       { path: "services", element: <ServicesPage /> },
       { path: "book-appointment", element: <BookingPage /> },
-      { path: "appointments", element: <div>نوبت‌های من</div> },
+      { path: "appointments", element: <AppointmentsPage /> },
+      { path: "appointments/:id", element: <AppointmentDetailPage /> },
+      {
+        path: "appointments/:id/reschedule",
+        element: (
+          <div className="py-10 text-center text-sm text-neutral-500">
+            این صفحه در بند ۱۵ (Reschedule) ساخته می‌شود
+          </div>
+        ),
+      },
       { path: "profile", element: <div>پروفایل</div> },
     ],
   },

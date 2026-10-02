@@ -12,7 +12,7 @@ const ServiceCard = ({ service }) => {
       onClick={() =>
         navigate("/book-appointment", { state: { preselectedServiceId: service.id } })
       }
-      className="flex flex-col gap-2 rounded-2xl bg-surface p-3 text-start"
+      className="flex flex-col gap-2 rounded-2xl bg-surface p-3 text-start cursor-pointer"
     >
       <div className="aspect-square overflow-hidden rounded-xl bg-primary-light">
         {service.image ? (
