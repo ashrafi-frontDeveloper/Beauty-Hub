@@ -6,8 +6,8 @@ import { createAppointment } from "@/services/appointmentsService";
 import { currentUser } from "@/data/mock/users";
 import BookingStepper from "./components/BookingStepper";
 import SelectServiceStep from "./components/steps/SelectServiceStep";
-import SelectDateStep from "./components/steps/SelectDateStep";
-import SelectTimeStep from "./components/steps/SelectTimeStep";
+import SelectDateStep from "@/Components/common/ScheduleSteps/SelectDateStep";
+import SelectTimeStep from "@/Components/common/ScheduleSteps/SelectTimeStep";
 import BookingSummaryStep from "./components/steps/BookingSummaryStep";
 import BookingSuccessStep from "./components/steps/BookingSuccessStep";
 

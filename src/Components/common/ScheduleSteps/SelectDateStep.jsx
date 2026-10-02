@@ -1,4 +1,5 @@
-// src/features/customer/booking/components/steps/SelectDateStep.jsx
+// src/Components/common/ScheduleSteps/SelectDateStep.jsx
+// (محتوا دقیقاً همون فایل قبلی‌ست — فقط مسیرش عوض شده)
 import dayjs, { toPersianDate } from "@/lib/dayjs";
 import { workingHours } from "@/data/mock/workingHours";
 
@@ -8,8 +9,8 @@ function buildAvailableDays() {
   const days = [];
 
   for (let i = 0; i < DAYS_TO_SHOW; i++) {
-    const gregorianDate = dayjs().add(i, "day"); // برای محاسبه و کلید - همیشه میلادی
-    const persianDate = toPersianDate(gregorianDate); // فقط برای نمایش
+    const gregorianDate = dayjs().add(i, "day");
+    const persianDate = toPersianDate(gregorianDate);
 
     days.push({
       isoDate: gregorianDate.format("YYYY-MM-DD"),
@@ -53,7 +54,7 @@ const SelectDateStep = ({ selectedDate, onSelect, onNext, onBack }) => {
         <button
           type="button"
           onClick={onBack}
-          className="flex-1 rounded-xl border border-neutral-200 py-3 text-sm text-neutral-600 cursor-pointer"
+          className="flex-1 rounded-xl border border-neutral-200 py-3 text-sm text-neutral-600"
         >
           مرحله قبل
         </button>
@@ -61,7 +62,7 @@ const SelectDateStep = ({ selectedDate, onSelect, onNext, onBack }) => {
           type="button"
           disabled={!selectedDate}
           onClick={onNext}
-          className="flex-1 rounded-xl bg-primary py-3 text-sm font-medium text-white disabled:opacity-40 cursor-pointer"
+          className="flex-1 rounded-xl bg-primary py-3 text-sm font-medium text-white disabled:opacity-40"
         >
           مرحله بعد
         </button>

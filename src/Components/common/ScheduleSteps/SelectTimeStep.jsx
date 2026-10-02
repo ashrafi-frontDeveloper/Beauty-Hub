@@ -1,17 +1,27 @@
-// src/features/customer/booking/components/steps/SelectTimeStep.jsx
+// src/Components/common/ScheduleSteps/SelectTimeStep.jsx
 import { useEffect, useState } from "react";
 import { getAppointmentsByDate } from "@/services/appointmentsService";
 import { generateTimeSlots } from "@/utils/timeSlots";
 import { workingHours } from "@/data/mock/workingHours";
 import dayjs from "@/lib/dayjs";
 
-const SelectTimeStep = ({ selectedDate, serviceDuration, selectedTime, onSelect, onNext, onBack }) => {
+// excludeAppointmentId: در Reschedule استفاده می‌شه تا خودِ نوبتی که
+// داریم جابه‌جاش می‌کنیم، به‌اشتباه به‌عنوان «اشغال‌کننده» حساب نشه.
+const SelectTimeStep = ({
+  selectedDate,
+  serviceDuration,
+  selectedTime,
+  excludeAppointmentId = null,
+  onSelect,
+  onNext,
+  onBack,
+}) => {
   const [slots, setSlots] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
-    getAppointmentsByDate(selectedDate).then((bookedAppointments) => {
+    getAppointmentsByDate(selectedDate, excludeAppointmentId).then((bookedAppointments) => {
       const nativeWeekday = dayjs(selectedDate).day();
       const dayWorkingHours = workingHours[nativeWeekday];
 
@@ -20,7 +30,7 @@ const SelectTimeStep = ({ selectedDate, serviceDuration, selectedTime, onSelect,
       );
       setIsLoading(false);
     });
-  }, [selectedDate, serviceDuration]);
+  }, [selectedDate, serviceDuration, excludeAppointmentId]);
 
   if (isLoading) {
     return (

@@ -9,7 +9,7 @@ import CustomerDashboardPage from "../features/customer/dashboard/CustomerDashbo
 import BookingPage from "../features/customer/booking/BookingPage";
 import AppointmentsPage from "../features/customer/appointments/AppointmentsPage";
 import AppointmentDetailPage from "../features/customer/appointments/AppointmentDetailPage";
-
+import ReschedulePage from "../features/customer/appointments/ReschedulePage";
 
 const router = createBrowserRouter([
   {
@@ -21,14 +21,7 @@ const router = createBrowserRouter([
       { path: "book-appointment", element: <BookingPage /> },
       { path: "appointments", element: <AppointmentsPage /> },
       { path: "appointments/:id", element: <AppointmentDetailPage /> },
-      {
-        path: "appointments/:id/reschedule",
-        element: (
-          <div className="py-10 text-center text-sm text-neutral-500">
-            این صفحه در بند ۱۵ (Reschedule) ساخته می‌شود
-          </div>
-        ),
-      },
+      { path: "appointments/:id/reschedule", element: <ReschedulePage />},
       { path: "profile", element: <div>پروفایل</div> },
     ],
   },
