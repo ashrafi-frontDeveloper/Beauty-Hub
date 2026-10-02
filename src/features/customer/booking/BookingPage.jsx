@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { getAllServices } from "@/services/servicesService";
 import { createAppointment } from "@/services/appointmentsService";
-import { currentUser } from "@/data/mock/users";
+import { useAuth } from "@/context/AuthContext";
 import BookingStepper from "./components/BookingStepper";
 import SelectServiceStep from "./components/steps/SelectServiceStep";
 import SelectDateStep from "@/Components/common/ScheduleSteps/SelectDateStep";
@@ -12,6 +12,8 @@ import BookingSummaryStep from "./components/steps/BookingSummaryStep";
 import BookingSuccessStep from "./components/steps/BookingSuccessStep";
 
 const BookingPage = () => {
+
+  const { user } = useAuth();
   const location = useLocation();
   const preselectedServiceId = location.state?.preselectedServiceId ?? null;
 
@@ -41,7 +43,7 @@ const BookingPage = () => {
   const handleConfirm = async () => {
     setIsSubmitting(true);
     await createAppointment({
-      customerId: currentUser.id,
+      customerId: user.id,
       serviceId: selectedService.id,
       serviceName: selectedService.name,
       date: draft.date,

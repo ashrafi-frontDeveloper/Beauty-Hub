@@ -3,14 +3,18 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { KeyRound, LogOut, ChevronLeft } from "lucide-react";
 import ConfirmModal from "@/Components/ui/ConfirmModal";
+import { useAuth } from "@/context/AuthContext";
+
+
 
 const AccountActions = () => {
   const navigate = useNavigate();
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
+  const { logout } = useAuth();
 
   const handleLogout = () => {
     setIsLogoutModalOpen(false);
-    // تا Auth واقعی وصل بشه، فقط به صفحه‌ی ورود هدایت می‌کنیم
+    logout();
     navigate("/auth");
   };
 

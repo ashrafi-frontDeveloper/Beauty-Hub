@@ -1,40 +1,17 @@
 // src/features/customer/profile/ProfilePage.jsx
-import { useEffect, useState } from "react";
-import { getCurrentUser, updateCurrentUser } from "@/services/userService";
+import { useAuth } from "@/context/AuthContext";
 import ProfileHeader from "./components/ProfileHeader";
 import ProfileForm from "./components/ProfileForm";
 import AccountActions from "./components/AccountActions";
 
 const ProfilePage = () => {
-  const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    getCurrentUser().then((result) => {
-      setUser(result);
-      setIsLoading(false);
-    });
-  }, []);
-
-  const handleSave = async (data) => {
-    const updated = await updateCurrentUser(data);
-    setUser(updated);
-  };
-
-  if (isLoading) {
-    return (
-      <div className="flex flex-col gap-4">
-        <div className="h-32 animate-pulse rounded-2xl bg-surface" />
-        <div className="h-64 animate-pulse rounded-2xl bg-surface" />
-      </div>
-    );
-  }
+  const { user, updateProfile } = useAuth();
 
   return (
     <div className="flex flex-col gap-4">
       <h1 className="text-lg font-bold text-neutral-800">پروفایل</h1>
       <ProfileHeader name={user.name} phone={user.phone} />
-      <ProfileForm defaultValues={user} onSave={handleSave} />
+      <ProfileForm defaultValues={user} onSave={updateProfile} />
       <AccountActions />
     </div>
   );

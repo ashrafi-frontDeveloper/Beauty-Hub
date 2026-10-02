@@ -1,17 +1,18 @@
 // src/features/customer/appointments/AppointmentsPage.jsx
 import { useEffect, useMemo, useState } from "react";
-import { currentUser } from "@/data/mock/users";
+import { useAuth } from "@/context/AuthContext";
 import { getAppointmentsByCustomer } from "@/services/appointmentsService";
 import AppointmentTabs from "./components/AppointmentTabs";
 import AppointmentCard from "./components/AppointmentCard";
 
 const AppointmentsPage = () => {
+  const { user } = useAuth();
   const [appointments, setAppointments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("upcoming");
 
   useEffect(() => {
-    getAppointmentsByCustomer(currentUser.id).then((result) => {
+    getAppointmentsByCustomer(user.id).then((result) => {
       setAppointments(result);
       setIsLoading(false);
     });
