@@ -10,6 +10,7 @@ import BookingPage from "../features/customer/booking/BookingPage";
 import AppointmentsPage from "../features/customer/appointments/AppointmentsPage";
 import AppointmentDetailPage from "../features/customer/appointments/AppointmentDetailPage";
 import ReschedulePage from "../features/customer/appointments/ReschedulePage";
+import ProfilePage from "../features/customer/profile/ProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,15 @@ const router = createBrowserRouter([
       { path: "appointments", element: <AppointmentsPage /> },
       { path: "appointments/:id", element: <AppointmentDetailPage /> },
       { path: "appointments/:id/reschedule", element: <ReschedulePage />},
-      { path: "profile", element: <div>پروفایل</div> },
+      { path: "profile", element: <ProfilePage /> },
+      {
+        path: "profile/change-password",
+        element: (
+          <div className="py-10 text-center text-sm text-neutral-500">
+            این صفحه بعداً تکمیل می‌شود
+          </div>
+        ),
+      }
     ],
   },
   {
