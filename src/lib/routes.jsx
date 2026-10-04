@@ -18,6 +18,10 @@ import AppointmentDetailPage from "../features/customer/appointments/Appointment
 import ReschedulePage from "../features/customer/appointments/ReschedulePage";
 import ProfilePage from "../features/customer/profile/ProfilePage";
 
+
+import AdminDashboardPage from "../features/admin/dashboard/AdminDashboardPage";
+
+
 const router = createBrowserRouter([
   {
     element: <ProtectedRoute allowedRole="customer" />,
@@ -67,7 +71,7 @@ const router = createBrowserRouter([
         path: "/admin",
         element: <AdminLayout />,
         children: [
-          { index: true, element: <div>داشبورد ادمین</div> },
+          { index: true, element: <AdminDashboardPage /> },
           { path: "appointments", element: <div>نوبت‌ها</div> },
           { path: "calendar", element: <div>تقویم</div> },
           { path: "customers", element: <div>مشتریان</div> },
