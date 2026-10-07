@@ -63,14 +63,31 @@ export function getAppointmentById(id) {
   });
 }
 
-export function cancelAppointment(id) {
+// export function cancelAppointment(id) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       const appointment = appointments.find((a) => a.id === id);
+//       if (appointment) appointment.status = "cancelled";
+//       resolve(appointment ?? null);
+//     }, 400);
+//   });
+// }
+
+//__________________________________________
+
+
+//این دو تابع رو جایگزین cancelAppointment قدیمی کن
+export function updateAppointmentStatus(id, status) {
   return new Promise((resolve) => {
     setTimeout(() => {
       const appointment = appointments.find((a) => a.id === id);
-      if (appointment) appointment.status = "cancelled";
+      if (appointment) appointment.status = status;
       resolve(appointment ?? null);
     }, 400);
   });
+}
+export function cancelAppointment(id) {
+  return updateAppointmentStatus(id, "cancelled");
 }
 
 export function rescheduleAppointment(id, { date, time }) {
