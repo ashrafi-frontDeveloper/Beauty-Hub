@@ -31,7 +31,7 @@ export const AdminSidebar = ({ isOpen, onClose }) => {
                     ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="mb-6 flex items-center justify-between">
-          <span className="text-lg font-bold text-white">Beauty Salon</span>
+          <span className="text-lg font-bold text-white">BeautyHub</span>
           <button type="button" onClick={onClose} className="md:hidden" aria-label="بستن منو">
             <X size={20} className="text-white" />
           </button>
