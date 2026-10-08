@@ -10,6 +10,15 @@ export const users = [
     role: "customer",
   },
   {
+    id: "u2",
+    name: "ساینا سعیدی",
+    phone: "09123456789",
+    email: "sany@example.com",
+    password: "01233210",
+    address: "",
+    role: "customer",
+  },
+  {
     id: "admin1",
     name: "مدیر سالن",
     phone: "09173562535",
