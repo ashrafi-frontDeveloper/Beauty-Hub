@@ -22,6 +22,7 @@ import ProfilePage from "../features/customer/profile/ProfilePage";
 import AdminDashboardPage from "../features/admin/dashboard/AdminDashboardPage";
 import AdminAppointmentsPage from "../features/admin/appointments/AdminAppointmentsPage";
 import AdminCalendarPage from "../features/admin/calendar/AdminCalendarPage";
+import AdminCustomersPage from "../features/admin/customers/AdminCustomersPage";
 
 const router = createBrowserRouter([
   {
@@ -75,7 +76,7 @@ const router = createBrowserRouter([
           { index: true, element: <AdminDashboardPage /> },
           { path: "appointments", element: <AdminAppointmentsPage /> },
           { path: "calendar", element: <AdminCalendarPage /> },
-          { path: "customers", element: <div>مشتریان</div> },
+          { path: "customers", element: <AdminCustomersPage /> },
           { path: "services", element: <div>مدیریت خدمات</div> },
           { path: "reports", element: <div>گزارش‌ها</div> },
           { path: "profile", element: <div>پروفایل</div> },
