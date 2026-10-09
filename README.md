@@ -1,533 +1,169 @@
-# 💇‍♀️ Beauty Salon Management System
+# 💇‍♀️ BeautyHub — Beauty Salon Management System
 
-A modern, responsive **Beauty Salon Management Dashboard** built with React and Tailwind CSS.
+A full front-end **booking & management system** for a single-branch beauty salon, built as a real-world portfolio project with React and Tailwind CSS.
 
-This project is designed as a real-world frontend application for managing appointments, services, customers, working hours, and salon reports.
+Customers can browse services, book appointments, reschedule or cancel them, and manage their profile — all in a **mobile-first, RTL, Persian UI**. Salon owners get a full **desktop-first admin panel** to manage appointments, a weekly/daily calendar, customers, services (CRUD), working hours, and revenue reports.
 
-> 🚧 **Project Status:** Frontend in development
-> Backend integration will be added in a future phase.
+> 🇮🇷 The product UI is entirely in **Persian (Farsi)** and built **RTL-first**, including a Jalali (Persian) calendar for all date logic. This README is in English for a wider audience.
 
----
+<p align="center">
+  <img src="./docs/screenshots/Beautyhub.png" alt="BeautyHub customer dashboard" width="260" />
+</p>
 
-## 📌 Overview
-
-**Beauty Salon Management System** is a web-based dashboard designed for a single women's beauty salon.
-
-The system provides two main user roles:
-
-* 👩‍💼 **Admin / Salon Owner**
-* 👩 **Customer**
-
-Customers can browse available services and book appointments, while the salon owner can manage appointments, services, customers, working hours, and business reports.
-
-The main goal of this project is to build a **clean, responsive, scalable, and portfolio-ready frontend application** using modern React development practices.
+> 📸 Screenshots above are placeholders — see [Adding Screenshots](#-adding-screenshots) to drop in your own.
 
 ---
 
 ## ✨ Features
 
-### 👩 Customer
+### For Customers (mobile-first)
+- 🔐 Authentication (login / register) with role-based redirect
+- 🏠 Personalized dashboard with next appointment, quick actions & popular services
+- 💈 Browse services with search & category filters
+- 📅 Multi-step booking flow — select service → date → time → confirm — with real-time slot availability
+- 🗓️ Appointment management — upcoming / completed / cancelled tabs
+- 🔁 Reschedule and ❌ cancel appointments with confirmation dialogs
+- 👤 Profile management (personal info, password, logout)
+- 📱 Bottom navigation — native app-like mobile UX
 
-* User registration
-* User login
-* Customer dashboard
-* Browse salon services
-* View service details
-* Book an appointment
-* Select appointment date
-* Select available time
-* View booking summary
-* In-person payment
-* View upcoming appointments
-* View completed appointments
-* View cancelled appointments
-* Reschedule appointments
-* Cancel appointments
-* Profile management
-* Settings
-* Favorites
-* Notifications
+### For Admin / Salon Owner (desktop-first)
+- 📊 Dashboard — total appointments, customers, revenue & services at a glance, with a revenue chart
+- 📋 Appointment management — search, filter, confirm / complete / cancel
+- 🗓️ Weekly & daily calendar view of all appointments
+- 👥 Customer directory with booking history per customer
+- 🛠️ Full CRUD for services (name, price, duration, category, image, status)
+- 🕒 Working hours configuration (per weekday, open/closed)
+- 📈 Reports — revenue, completed/cancelled counts, date-range filters
+- ⚙️ Account settings — profile info & password change
+- 🧭 Responsive, collapsible sidebar (drawer on mobile/tablet)
 
----
-
-### 👩‍💼 Admin / Salon Owner
-
-* Admin dashboard
-* Appointment management
-* Appointment status management
-* Calendar view
-* Customer management
-* Service management
-* Create services
-* Edit services
-* Delete services
-* Activate / deactivate services
-* Configure service price
-* Configure service duration
-* Manage salon working hours
-* Revenue overview
-* Appointment statistics
-* Customer statistics
-* Service statistics
-* Reports
-* Profile management
-* Settings
+### Cross-cutting
+- ⏱️ Conflict-free time-slot engine — respects service duration, working hours & existing bookings
+- 🗓️ Full Jalali (Persian) calendar support via `dayjs` + `jalaliday`
+- 🎨 Centralized design-token system (Tailwind v4 `@theme`) — brand color, status colors, typography
+- 🧩 Clear separation between UI and data (`services/` layer) — ready to swap mock data for a real API
+- ✅ Loading / empty / error / success states handled throughout
+- 🛡️ Role-based route guards (`ProtectedRoute` / `GuestRoute`)
 
 ---
 
-## 📅 Appointment System
+## 🧱 Tech Stack
 
-Appointment booking is the core functionality of the application.
+| Layer            | Choice                                      |
+|-------------------|----------------------------------------------|
+| Framework         | [React 19](https://react.dev/)               |
+| Build tool        | [Vite 6](https://vite.dev/)                   |
+| Styling           | [Tailwind CSS v4](https://tailwindcss.com/)   |
+| Routing           | [React Router v7](https://reactrouter.com/)   |
+| Forms             | [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) |
+| Charts            | [Recharts](https://recharts.org/)             |
+| Icons             | [lucide-react](https://lucide.dev/)           |
+| Dates (Jalali)    | [dayjs](https://day.js.org/) + [jalaliday](https://www.npmjs.com/package/jalaliday) |
+| Data layer        | Mock data + a thin `services/` abstraction (swap-ready for a real API) |
 
-### Customer Booking Flow
+> No backend yet — this is a **frontend-only** project by design. See [Roadmap](#-roadmap--v2).
 
-```text
-Dashboard
-    ↓
-Services
-    ↓
-Select Service
-    ↓
-Select Date
-    ↓
-Select Available Time
-    ↓
-Booking Summary
-    ↓
-Confirm Appointment
-    ↓
-Booking Success
+---
+
+## 📂 Project Structure
+
 ```
-
-The system takes the following into account:
-
-* Service duration
-* Salon working hours
-* Existing appointments
-* Available time slots
-* Appointment conflicts
-
-Customers can also reschedule or cancel their appointments.
-
----
-
-## 💳 Payment
-
-Online payment is not included in the current version.
-
-All appointments use:
-
-```text
-Payment Method: Pay at Salon
-```
-
-Online payment is planned as a future feature.
-
----
-
-## 🧑‍💻 Tech Stack
-
-### Frontend
-
-* React
-* Tailwind CSS
-* React Router
-* React Hook Form
-* Zod
-* Lucide React
-* Recharts
-
-### Planned / Optional
-
-* TanStack Query
-* Axios
-
-These tools will be introduced only where they provide a clear benefit.
-
----
-
-## 🏗️ Project Architecture
-
-The project follows a modular React architecture.
-
-```text
 src/
+├── Components/
+│   ├── Layouts/            # CustomerLayout, AdminLayout, AuthLayout
+│   ├── common/              # Shared feature-agnostic components (Sidebar, ScheduleSteps, etc.)
+│   └── ui/                  # Generic UI primitives (Modal, ConfirmDialog, StatCard, ...)
 │
-├── assets/
+├── features/
+│   ├── auth/                 # Login / Register
+│   ├── customer/              # Dashboard, Services, Booking, Appointments, Profile
+│   └── admin/                 # Dashboard, Appointments, Calendar, Customers, Services, Reports, Settings
 │
-├── components/
-│   ├── common/
-│   ├── ui/
-│   └── layout/
-│
-├── data/
-│   └── mock/
-│
-├── hooks/
-│
-├── layouts/
-│   ├── AdminLayout/
-│   └── CustomerLayout/
-│
-├── pages/
-│   ├── auth/
-│   ├── admin/
-│   └── customer/
-│
-├── schemas/
-│
-├── services/
-│
-├── routes/
-│
-└── utils/
+├── context/                 # AuthContext (session, role, auth actions)
+├── services/                 # Data-access layer (mock today, real API tomorrow)
+├── data/mock/                # Mock datasets (users, services, appointments, working hours...)
+├── constants/                # Shared enums & lookup tables
+├── utils/                     # Pure helper functions (currency formatting, time-slot engine...)
+├── lib/                       # dayjs config, router definition
+└── index.css                  # Tailwind import + design tokens (@theme)
 ```
-
-The architecture is designed to keep UI components, business logic, mock data, and future API integration reasonably separated.
-
----
-
-## 🎨 Design & UX
-
-The application follows a:
-
-* Modern
-* Clean
-* Minimal
-* Professional
-
-design direction.
-
-### Design Principles
-
-* RTL interface
-* Persian language
-* Toman currency
-* Responsive layout
-* Mobile-first customer experience
-* Desktop-first admin experience
-* Clear visual hierarchy
-* Reusable UI components
-* Consistent spacing and typography
-* Accessible interactions
-* Loading, empty, error, and success states
-
----
-
-## 📱 Responsive Design
-
-The application is designed for:
-
-* 📱 Mobile
-* 📲 Tablet
-* 💻 Desktop
-
-### Customer
-
-Customer experience follows a **Mobile-First** approach because customers are expected to use the booking system primarily on mobile devices.
-
-### Admin
-
-The Admin dashboard follows a **Desktop-First** approach because salon management is expected to be performed mainly on desktop or laptop devices.
-
----
-
-## 👥 User Roles
-
-### Customer
-
-```text
-Register
-   ↓
-Login
-   ↓
-Customer Dashboard
-   ↓
-Book Appointment
-   ↓
-Manage Appointments
-```
-
-### Admin
-
-```text
-Login
-   ↓
-Admin Dashboard
-   ↓
-Manage Appointments
-   ├── Calendar
-   ├── Customers
-   ├── Services
-   ├── Working Hours
-   └── Reports
-```
-
----
-
-## 📊 Admin Dashboard
-
-The Admin dashboard provides an overview of the salon's current activity.
-
-It includes:
-
-* Today's appointments
-* Total appointments
-* Total customers
-* Total services
-* Revenue overview
-* Appointment statistics
-* Revenue charts
-* Recent bookings
-* Calendar overview
-
----
-
-## 🗂️ Appointment Status
-
-Appointments can have one of the following statuses:
-
-| Status      | Description              |
-| ----------- | ------------------------ |
-| `Pending`   | Waiting for confirmation |
-| `Confirmed` | Appointment confirmed    |
-| `Completed` | Service completed        |
-| `Cancelled` | Appointment cancelled    |
-
----
-
-## 🛠️ Service Management
-
-The Admin can manage the salon's services.
-
-Each service contains:
-
-```text
-Service
-├── ID
-├── Name
-├── Description
-├── Price
-├── Duration
-├── Image
-└── Status
-```
-
-Example:
-
-```text
-Hair Color
-500,000 تومان
-120 minutes
-```
-
----
-
-## 🕐 Working Hours
-
-The Admin can configure the salon's working hours for each day.
-
-Example:
-
-```text
-Saturday    09:00 - 20:00
-Sunday      09:00 - 20:00
-Monday      09:00 - 20:00
-Tuesday     09:00 - 20:00
-Wednesday   09:00 - 20:00
-Thursday    09:00 - 20:00
-Friday      Closed
-```
-
-Working hours are used when calculating available appointment time slots.
-
----
-
-## 🚧 Current Limitations
-
-The current version is primarily a frontend project.
-
-The following features are not currently implemented:
-
-* Real backend API
-* Real database
-* Real authentication
-* Online payment
-* SMS notifications
-* Email notifications
-* Staff management
-* Multi-branch management
-* Inventory management
-* Payroll
-* Reviews and ratings
-* Loyalty system
-
-Mock data is used where necessary during frontend development.
-
----
-
-## 🔮 Future Development — V2
-
-Potential features for future versions:
-
-* 🔐 Real authentication and authorization
-* 🗄️ Database integration
-* 🔌 REST API
-* 💳 Online payment
-* 📱 SMS notifications
-* 📧 Email notifications
-* 👩‍🦰 Staff / stylist management
-* 🏢 Multi-branch support
-* ⭐ Customer reviews
-* 🎁 Loyalty program
-* 📦 Inventory management
-* 💰 Advanced financial reports
-* 📈 Advanced analytics
 
 ---
 
 ## 🚀 Getting Started
 
-### 1. Clone the repository
+### Prerequisites
+- Node.js 18+
+- npm
+
+### Installation
 
 ```bash
-git clone https://github.com/your-username/beauty-salon-dashboard.git
-```
-
-### 2. Navigate to the project
-
-```bash
-cd beauty-salon-dashboard
-```
-
-### 3. Install dependencies
-
-```bash
+git clone https://github.com/<your-username>/BeautyHub-Management-System.git
+cd BeautyHub-Management-System
 npm install
 ```
 
-### 4. Start the development server
+### Development
 
 ```bash
 npm run dev
 ```
 
-The application will be available at the local development URL provided by Vite.
+The app will be available at `http://localhost:5173`.
 
----
+### Build
 
-## 🧪 Development Approach
-
-This project is being developed incrementally.
-
-Development process:
-
-```text
-Product Requirements
-        ↓
-UX / User Flow
-        ↓
-UI Design
-        ↓
-Component Architecture
-        ↓
-React Implementation
-        ↓
-Responsive Implementation
-        ↓
-Testing
-        ↓
-Backend Integration
+```bash
+npm run build
+npm run preview
 ```
 
-The frontend is being developed independently from the backend so that a real API can be integrated later without rebuilding the entire UI.
+### Test credentials (mock auth)
+
+| Role     | Phone / Email                              | Password   |
+|----------|---------------------------------------------|------------|
+| Customer | `09054273179` or `sara@example.com`         | `123456`   |
+| Admin    | `09173562535` or `admin@beautyhub.com`      | `123321` |
+
+> Session is persisted in `localStorage`; data lives in-memory (mock), so it resets on a hard refresh of the dataset only when the module reloads — not on every navigation.
 
 ---
 
-## 🎯 Project Goals
+## 🗺️ Roadmap / V2
 
-The main goals of this project are:
+Deliberately **out of scope** for this MVP, to keep the project focused:
 
-* Practice building a real-world React application
-* Improve React architecture skills
-* Practice Tailwind CSS
-* Build reusable components
-* Practice responsive UI development
-* Implement complex booking flows
-* Practice dashboard development
-* Learn better UX thinking
-* Prepare a professional portfolio project
-* Create a frontend architecture ready for future backend integration
+- 💳 Online payment
+- 📩 SMS / email notifications
+- ⭐ Reviews & ratings
+- 🎁 Loyalty program
+- 👩‍💼 Multiple staff / stylists
+- 🏢 Multi-branch support
+- 📦 Inventory management
+- 💰 Payroll
+- 📊 Advanced analytics
+- 🔌 Real backend & API integration
 
 ---
 
-## 📌 Roadmap
+## 📸 Adding Screenshots
 
-### Phase 1 — Product & UX
-
-* [x] Define product scope
-* [x] Define user roles
-* [x] Define MVP
-* [x] Define main user flows
-* [x] Define booking flow
-* [x] Define admin structure
-* [ ] Finalize UI design
-
-### Phase 2 — Frontend
-
-* [ ] Project setup
-* [ ] Design system
-* [ ] Authentication pages
-* [ ] Customer layout
-* [ ] Admin layout
-* [ ] Customer dashboard
-* [ ] Admin dashboard
-* [ ] Services
-* [ ] Booking flow
-* [ ] Appointment management
-* [ ] Calendar
-* [ ] Customers
-* [ ] Working hours
-* [ ] Reports
-* [ ] Responsive implementation
-* [ ] Loading / Empty / Error states
-
-### Phase 3 — Backend
-
-* [ ] Backend architecture
-* [ ] Database
-* [ ] Authentication API
-* [ ] User roles
-* [ ] Services API
-* [ ] Appointment API
-* [ ] Working hours API
-* [ ] Customer API
-* [ ] Reports API
-* [ ] Frontend API integration
-
-### Phase 4 — Production
-
-* [ ] Testing
-* [ ] Bug fixing
-* [ ] Performance optimization
-* [ ] Accessibility improvements
-* [ ] Deployment
-* [ ] Documentation
+1. Run the app locally and capture screenshots (phone-width for customer screens, desktop-width for admin screens).
+2. Drop the images into `docs/screenshots/` using these names (or update the paths at the top of this file):
+   - `customer-dashboard.png`
+   - `booking-flow.png`
+   - `admin-dashboard.png`
+3. Commit and push — they'll render automatically on the GitHub repo page.
 
 ---
 
 ## 📄 License
 
-This project is currently developed as a personal portfolio project.
-
-License information will be added if the project is released publicly for reuse.
+This project is open-source and available for learning/portfolio purposes. Add a license of your choice (e.g. MIT) if you plan to share the source publicly.
 
 ---
 
-## 👨‍💻 Author
+## 🙋 Author
 
-**Mohammad Ashrafi**
-
-Frontend Developer
-
-Built with ❤️ using React and Tailwind CSS.
+Built as a personal portfolio project — feedback and suggestions are welcome via Issues or Pull Requests.
