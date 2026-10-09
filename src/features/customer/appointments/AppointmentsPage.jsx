@@ -28,7 +28,28 @@ const AppointmentsPage = () => {
 
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-lg font-bold text-neutral-800">نوبت‌های من</h1>
+
+      <div className="relative mb-6 overflow-hidden rounded-3xl border border-pink-100 bg-gradient-to-l from-pink-100/80 via-pink-50 to-white px-5 py-6 sm:px-7 sm:py-8">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-8 -top-10 size-32 rounded-full bg-pink-200/40 blur-3xl"
+        />
+
+        <div className="relative">
+          <span className="mb-2 inline-flex items-center gap-2 text-xs font-semibold text-pink-600 sm:text-sm">
+            <span className="size-1.5 rounded-full bg-pink-500" />
+            برنامه‌ریزی برای خودت
+          </span>
+
+          <h1 className="text-2xl font-extrabold tracking-tight text-neutral-800 sm:text-3xl">
+            نوبت‌های من
+          </h1>
+
+          <p className="mt-2 max-w-lg text-sm leading-7 text-neutral-600 sm:text-base">
+            نوبت‌هات رو مدیریت کن و برای لحظه‌های زیبایی و آرامشت آماده باش.
+          </p>
+        </div>
+      </div>
 
       <AppointmentTabs activeTab={activeTab} onChange={setActiveTab} />
 
