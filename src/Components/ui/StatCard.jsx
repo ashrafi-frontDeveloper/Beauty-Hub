@@ -1,4 +1,5 @@
-// src/features/admin/dashboard/components/StatCard.jsx
+// src/Components/ui/StatCard.jsx
+// (محتوا دقیقاً عین قبل — فقط مسیر عوض شده)
 const StatCard = ({ label, value, icon: Icon, isLoading }) => {
   if (isLoading) {
     return <div className="h-24 animate-pulse rounded-2xl bg-surface" />;

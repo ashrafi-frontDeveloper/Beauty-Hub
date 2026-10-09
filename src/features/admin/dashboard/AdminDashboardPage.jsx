@@ -7,8 +7,8 @@ import {
   getTodaysAppointments,
 } from "@/services/adminDashboardService";
 import { formatToman } from "@/utils/formatCurrency";
-import StatCard from "./components/StatCard";
-import RevenueChart from "./components/RevenueChart";
+import StatCard from "@/Components/ui/StatCard";
+import RevenueChart from "@/Components/common/RevenueChart/RevenueChart";
 import TodaysAppointmentsList from "./components/TodaysAppointmentsList";
 
 const AdminDashboardPage = () => {
@@ -43,8 +43,8 @@ const AdminDashboardPage = () => {
         />
         <StatCard label="خدمات" value={stats?.totalServices ?? "—"} icon={Sparkles} isLoading={isLoading} />
       </div>
-
-      <RevenueChart data={revenueData} isLoading={isLoading} />
+      
+      <RevenueChart title="نمودار درآمد ماهانه" data={revenueData} isLoading={isLoading} />
 
       <div>
         <h2 className="mb-3 text-sm font-bold text-neutral-800">نوبت‌های امروز</h2>

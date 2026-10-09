@@ -39,9 +39,11 @@ export const AuthProvider = ({ children }) => {
     return updated;
   };
 
+  const changePassword = (data) => authService.changePassword(user.id, data);
+
   return (
     <AuthContext.Provider
-      value={{ user, role: user?.role ?? null, isLoading, login, register, logout, updateProfile }}
+      value={{ user, role: user?.role ?? null, isLoading, login, register, logout, updateProfile, changePassword }}
     >
       {children}
     </AuthContext.Provider>

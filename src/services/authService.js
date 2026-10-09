@@ -54,3 +54,14 @@ export async function getSession() {
   }
   return user;
 }
+
+export async function changePassword(userId, { currentPassword, newPassword }) {
+  await delay();
+  const user = users.find((u) => u.id === userId);
+  if (!user) throw new Error("کاربر پیدا نشد");
+  if (user.password !== currentPassword) {
+    throw new Error("رمز عبور فعلی صحیح نیست");
+  }
+  user.password = newPassword;
+  return true;
+}

@@ -17,6 +17,5 @@ export const adminNavItems = [
   { to: "/admin/customers", label: "مشتریان", icon: Users },
   { to: "/admin/services", label: "خدمات", icon: Sparkles },
   { to: "/admin/reports", label: "گزارش‌ها", icon: BarChart3 },
-  { to: "/admin/profile", label: "پروفایل", icon: User },
   { to: "/admin/settings", label: "تنظیمات", icon: Settings },
 ];
