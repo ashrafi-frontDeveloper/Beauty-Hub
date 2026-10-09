@@ -9,8 +9,10 @@ Customers can browse services, book appointments, reschedule or cancel them, and
 <p align="center">
   <img src="./docs/screenshots/Beautyhub.png" alt="BeautyHub customer dashboard" width="360" />
 </p>
+
 ---
-## ✨ Features
+
+✨ Features
 
 ### For Customers (mobile-first)
 - 🔐 Authentication (login / register) with role-based redirect
