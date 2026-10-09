@@ -7,7 +7,7 @@ Customers can browse services, book appointments, reschedule or cancel them, and
 > 🇮🇷 The product UI is entirely in **Persian (Farsi)** and built **RTL-first**, including a Jalali (Persian) calendar for all date logic. This README is in English for a wider audience.
 
 <p align="center">
-  <img src="./docs/screenshots/Beautyhub.png" alt="BeautyHub customer dashboard" width="260" />
+  <img src="./docs/screenshots/Beautyhub.png" alt="BeautyHub customer dashboard" width="360" />
 </p>
 
 > 📸 Screenshots above are placeholders — see [Adding Screenshots](#-adding-screenshots) to drop in your own.
