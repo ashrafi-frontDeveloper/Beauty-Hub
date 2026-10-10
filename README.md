@@ -161,6 +161,7 @@ Deliberately **out of scope** for this MVP, to keep the project focused:
 This project is open-source and available for learning/portfolio purposes. Add a license of your choice (e.g. MIT) if you plan to share the source publicly.
 
 ---
+### 🔗 [Live Demo](https://beauty-hub-steel.vercel.app/)
 
 ## 🙋 Author
 
