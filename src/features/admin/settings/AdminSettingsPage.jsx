@@ -1,6 +1,6 @@
 // src/features/admin/settings/AdminSettingsPage.jsx
 import AdminAccountForm from "./components/AdminAccountForm";
-import ChangePasswordForm from "./components/ChangePasswordForm";
+import ChangePasswordForm from "@/Components/common/ChangePasswordForm/ChangePasswordForm";
 import WorkingHoursEditor from "./components/WorkingHoursEditor";
 
 const AdminSettingsPage = () => {

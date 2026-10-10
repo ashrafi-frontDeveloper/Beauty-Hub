@@ -26,7 +26,8 @@ import AdminCustomersPage from "../features/admin/customers/AdminCustomersPage";
 import AdminServicesPage from "../features/admin/services/AdminServicesPage";
 import AdminReportsPage from "../features/admin/reports/AdminReportsPage";
 import AdminSettingsPage from "../features/admin/settings/AdminSettingsPage";
-
+import ChangePasswordPage from "../features/customer/profile/ChangePasswordPage";
+import NotFoundPage from "../features/NotFoundPage ";
 
 const router = createBrowserRouter([
   {
@@ -43,14 +44,7 @@ const router = createBrowserRouter([
           { path: "appointments/:id", element: <AppointmentDetailPage /> },
           { path: "appointments/:id/reschedule", element: <ReschedulePage /> },
           { path: "profile", element: <ProfilePage /> },
-          {
-            path: "profile/change-password",
-            element: (
-              <div className="py-10 text-center text-sm text-neutral-500">
-                این صفحه بعداً تکمیل می‌شود
-              </div>
-            ),
-          },
+          { path: "profile/change-password", element: <ChangePasswordPage /> },
         ],
       },
     ],
@@ -89,7 +83,7 @@ const router = createBrowserRouter([
     ],
   },
 
-  { path: "*", element: <div>صفحه پیدا نشد</div> },
+  { path: "*", element: <NotFoundPage /> },
 ]);
 
 export default router;

@@ -1,8 +1,8 @@
-// src/features/admin/settings/components/ChangePasswordForm.jsx
+// src/Components/common/ChangePasswordForm/ChangePasswordForm.jsx
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { changePasswordSchema } from "../settingsSchemas";
+import { changePasswordSchema } from "@/schemas/changePasswordSchema";
 import { useAuth } from "@/context/AuthContext";
 
 const inputClass =
@@ -34,8 +34,6 @@ const ChangePasswordForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3 rounded-2xl bg-surface p-4">
-      <h2 className="text-sm font-bold text-neutral-800">تغییر رمز عبور</h2>
-
       <label className="flex flex-col gap-1">
         <span className="text-xs text-neutral-500">رمز عبور فعلی</span>
         <input type="password" {...register("currentPassword")} className={inputClass} />
